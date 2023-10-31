@@ -147,7 +147,7 @@ TextureImporter:
       name: wires_1
       rect:
         serializedVersion: 2
-        x: 159
+        x: 157
         y: 41
         width: 78
         height: 85
@@ -231,9 +231,9 @@ TextureImporter:
       name: wires_5
       rect:
         serializedVersion: 2
-        x: 735
+        x: 759
         y: 42
-        width: 171
+        width: 42
         height: 84
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -311,6 +311,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: wires_9
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 42
+        width: 162
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f784a6fd4ff1448128cf10d90a8b86a0
+      internalID: 1375320997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -331,6 +352,7 @@ TextureImporter:
       wires_6: -108836562
       wires_7: 1309663657
       wires_8: -1516560642
+      wires_9: 1375320997
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
