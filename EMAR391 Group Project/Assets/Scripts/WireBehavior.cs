@@ -43,7 +43,10 @@ public class WireBehavior : MonoBehaviour
     private void OnMouseUp()
     {
         mouseDown = false;
-        gameObject.transform.position = powerWireS.startPosition;
+        if (!powerWireS.connected)
+            gameObject.transform.position = powerWireS.startPosition;
+        if (powerWireS.connected)
+            gameObject.transform.position = powerWireS.connectedPosition;
     }
 
     private void MoveWire()
