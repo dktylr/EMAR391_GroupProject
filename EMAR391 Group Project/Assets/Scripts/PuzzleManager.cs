@@ -51,7 +51,7 @@ public class PuzzleManager : MonoBehaviour
         size = 3;
         CreateGamePieces(0.01f);
     }
-    private void Update()
+    void Update()
     {
         if(!shuffling && CheckCompletion())
         {
