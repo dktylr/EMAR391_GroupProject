@@ -11,6 +11,9 @@ public class Stats : MonoBehaviour
     public bool moving = false;
     public Vector3 startPosition;
     public Color objectColor;
+    public bool connected = false;
+    public Vector3 connectedPosition;
+
     // Start is called before the first frame update
     void Start()
     {

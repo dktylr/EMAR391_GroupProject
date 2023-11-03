@@ -20,8 +20,8 @@ public class WireBehavior : MonoBehaviour
     void Update()
     {
         MoveWire();
-        line.SetPosition(3, new Vector3(gameObject.transform.position.x - .1f, gameObject.transform.position.y - .1f, gameObject.transform.localPosition.z));
-        line.SetPosition(2, new Vector3(gameObject.transform.position.x - .4f, gameObject.transform.position.y - .1f, gameObject.transform.localPosition.z));
+        line.SetPosition(3, new Vector3(gameObject.transform.position.x - .1f, gameObject.transform.position.y - .1f, gameObject.transform.position.z));
+        line.SetPosition(2, new Vector3(gameObject.transform.position.x - .4f, gameObject.transform.position.y - .1f, gameObject.transform.position.z));
 
     }
     private void OnMouseDown()
@@ -43,7 +43,10 @@ public class WireBehavior : MonoBehaviour
     private void OnMouseUp()
     {
         mouseDown = false;
-        gameObject.transform.position = powerWireS.startPosition;
+        if (!powerWireS.connected)
+            gameObject.transform.position = powerWireS.startPosition;
+        if (powerWireS.connected)
+            gameObject.transform.position = powerWireS.connectedPosition;
     }
 
     private void MoveWire()
