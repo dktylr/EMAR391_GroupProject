@@ -45,6 +45,7 @@ public class Virus : MonoBehaviour
                 CreateSplit();
             }
 
+            FindAnyObjectByType<GameManager>().VirusDestroyed(this);
             Destroy(this.gameObject);
         }
     }
