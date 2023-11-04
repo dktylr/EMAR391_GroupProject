@@ -18,7 +18,7 @@ TagManager:
   - Virus
   - Boundary
   - IgnoreCollisions
-  - 
+  - Background
   - 
   - 
   - 
@@ -42,4 +42,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3686030121
+    locked: 0
+  - name: Sprites
+    uniqueID: 3756427489
     locked: 0
