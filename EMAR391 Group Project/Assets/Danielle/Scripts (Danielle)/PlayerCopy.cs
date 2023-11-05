@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerCopy : MonoBehaviour
 {
     public Bullet bulletPrefab;
-    public ScreenBounds screenBounds;
     public AudioSource shootSound;
     public AudioClip hitSound;
     public float thrustSpeed = 1.0f;
@@ -14,7 +13,6 @@ public class Player : MonoBehaviour
     private bool _thrusting;
     private bool _reversing;
     private float _turnDirection;
-
 
     private void Awake()
     {
@@ -33,7 +31,8 @@ public class Player : MonoBehaviour
         else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             _turnDirection = -1.0f;
-        } else
+        }
+        else
         {
             _turnDirection = 0.0f;
         }
@@ -42,7 +41,7 @@ public class Player : MonoBehaviour
         {
             Shoot();
             shootSound.Play();
-        }     
+        }
     }
 
     private void FixedUpdate()
@@ -51,7 +50,7 @@ public class Player : MonoBehaviour
         {
             _rigidbody.AddForce(this.transform.up * this.thrustSpeed);
         }
-        
+
         if (_reversing)
         {
             _rigidbody.AddForce(this.transform.up * -this.thrustSpeed);
@@ -60,17 +59,6 @@ public class Player : MonoBehaviour
         if (_turnDirection != 0.0f)
         {
             _rigidbody.AddTorque(_turnDirection * turnSpeed);
-        }
-
-        Vector3 tempPosition = transform.position;
-        if (screenBounds.AmIOutOfBounds(tempPosition))
-        {
-            Vector2 newPosition = newPosition = screenBounds.CalculateWrappedPosition(tempPosition);
-            transform.position = newPosition;
-        }
-        else
-        {
-            transform.position = tempPosition;
         }
     }
 
@@ -82,7 +70,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Virus")
+        if (collision.gameObject.tag == "Virus")
         {
             _rigidbody.velocity = Vector3.zero;
             _rigidbody.angularVelocity = 0.0f;

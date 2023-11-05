@@ -19,7 +19,7 @@ TagManager:
   - Boundary
   - IgnoreCollisions
   - Background
-  - 
+  - ScreenWrap
   - 
   - 
   - 
@@ -48,4 +48,7 @@ TagManager:
     locked: 0
   - name: Sprites
     uniqueID: 3756427489
+    locked: 0
+  - name: UI
+    uniqueID: 3398353529
     locked: 0

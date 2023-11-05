@@ -5,6 +5,7 @@ using UnityEngine;
 public class Virus : MonoBehaviour
 {
     public Sprite[] sprites;
+    public AudioClip soundEffect;
     public float size = 1.0f;
     public float minSize = 0.5f;
     public float maxSize = 1.5f;
@@ -46,6 +47,7 @@ public class Virus : MonoBehaviour
             }
 
             FindAnyObjectByType<GameManager>().VirusDestroyed(this);
+            AudioSource.PlayClipAtPoint(soundEffect, new Vector2(0,0));
             Destroy(this.gameObject);
         }
     }
