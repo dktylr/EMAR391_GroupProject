@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -7,9 +8,10 @@ public class GameManager : MonoBehaviour
     public Player player;
     public ParticleSystem explosion;
     public int lives = 3;
-    public float respawnTime = 3.0f;
-    public float respawnInvulnerabilityTime = 3.0f;
+    public float respawnTime = 2.0f;
+    public float respawnInvulnerabilityTime = 5.0f;
     public int score = 0;
+
     public void VirusDestroyed(Virus virus)
     {
         this.explosion.transform.position = virus.transform.position;
