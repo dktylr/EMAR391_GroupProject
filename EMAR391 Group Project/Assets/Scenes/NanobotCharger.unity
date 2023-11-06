@@ -3428,6 +3428,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1866106787}
+  - component: {fileID: 1866106788}
   m_Layer: 0
   m_Name: LeftRed
   m_TagString: Untagged
@@ -3453,6 +3454,20 @@ Transform:
   - {fileID: 1766375271}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1866106788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866106786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cae72f396780499ea1a4ba0d8e87f51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  linePrefab: {fileID: 0}
+  itemName: 
 --- !u!1 &1873830181
 GameObject:
   m_ObjectHideFlags: 0
@@ -3564,8 +3579,6 @@ GameObject:
   - component: {fileID: 2011684276}
   - component: {fileID: 2011684275}
   - component: {fileID: 2011684274}
-  - component: {fileID: 2011684273}
-  - component: {fileID: 2011684272}
   - component: {fileID: 2011684271}
   m_Layer: 0
   m_Name: wireTipRed
@@ -3695,37 +3708,6 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
---- !u!114 &2011684272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2011684269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6891a2f988ae6496699485a307f27f0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movable: 0
-  moving: 0
-  startPosition: {x: 0, y: 0, z: 0}
-  objectColor: 1
-  connected: 0
-  connectedPosition: {x: 0, y: 0, z: 0}
---- !u!114 &2011684273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2011684269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 982a514df85294c9ba3f19cadfd2e783, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  powerWireS: {fileID: 2011684272}
 --- !u!50 &2011684274
 Rigidbody2D:
   serializedVersion: 4

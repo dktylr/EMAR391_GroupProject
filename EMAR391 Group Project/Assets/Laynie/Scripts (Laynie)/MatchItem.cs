@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class MatchItem : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerEnterHandler, IPointerUpHandler
+public class MatchItem : MonoBehaviour, IDragHandler, IPointerEnterHandler, IPointerUpHandler
 {
     static MatchItem hoverItem;
 
@@ -32,9 +32,9 @@ public class MatchItem : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
         if (!this.Equals(hoverItem) && itemName.Equals(hoverItem.itemName))
         {
             UpdateLine(hoverItem.transform.position);
+            MatchLogic.AddPoints();
             Destroy(hoverItem);
             Destroy(this);
-            MatchLogic.AddPoint();
         }
         else
         {
@@ -54,8 +54,4 @@ public class MatchItem : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoin
         line.transform.localScale = new Vector3(direction.magnitude, 1, 1);
     }
 
-    void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
-    {
-        throw new System.NotImplementedException();
-    }
 }
