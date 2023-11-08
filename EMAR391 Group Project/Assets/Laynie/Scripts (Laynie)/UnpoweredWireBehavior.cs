@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UnpoweredWireBehavior : MonoBehaviour
 {
     UnpoweredWireStat unpoweredWireS;
+    public GameObject levelCompleteUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,11 +51,15 @@ public class UnpoweredWireBehavior : MonoBehaviour
         {
             unpoweredWireS.poweredLight.SetActive(true);
             unpoweredWireS.unpoweredLight.SetActive(false);
+            levelCompleteUI.SetActive(false);
+
         }
         else
         {
             unpoweredWireS.poweredLight.SetActive(false);
             unpoweredWireS.unpoweredLight.SetActive(true);
+            levelCompleteUI.SetActive(true);
         }
+
     }
 }
