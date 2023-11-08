@@ -24,8 +24,8 @@ public class UnpoweredWireBehavior : MonoBehaviour
             Stats poweredWireS = collision.GetComponent<Stats>();
             if (poweredWireS.objectColor == unpoweredWireS.objectColor)
             {
-                poweredWireS.connected = false;
-                unpoweredWireS.connected = false;
+                poweredWireS.connected = true;
+                unpoweredWireS.connected = true;
                 poweredWireS.connectedPosition = gameObject.transform.position;
             }
         }
@@ -36,8 +36,11 @@ public class UnpoweredWireBehavior : MonoBehaviour
         if (collision.GetComponent<Stats>())
         {
             Stats poweredWireS = collision.GetComponent<Stats>();
-                poweredWireS.connected = true;
-                unpoweredWireS.connected = true;
+            if (!poweredWireS)
+            {
+                poweredWireS.connected = false;
+                unpoweredWireS.connected = false;
+            }
         }
     }
     void ManageLight()
@@ -48,7 +51,9 @@ public class UnpoweredWireBehavior : MonoBehaviour
             unpoweredWireS.unpoweredLight.SetActive(false);
         }
         else
+        {
             unpoweredWireS.poweredLight.SetActive(false);
-        unpoweredWireS.unpoweredLight.SetActive(true);
+            unpoweredWireS.unpoweredLight.SetActive(true);
+        }
     }
 }

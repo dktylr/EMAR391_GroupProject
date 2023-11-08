@@ -13,15 +13,15 @@ public class WireBehavior : MonoBehaviour
     void Start()
     {
         powerWireS = gameObject.GetComponent<Stats>();
-        line = gameObject.GetComponent<LineRenderer>();
+        line = gameObject.GetComponentInParent<LineRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
         MoveWire();
-        line.SetPosition(3, new Vector3(gameObject.transform.position.x - .1f, gameObject.transform.position.y - .1f, gameObject.transform.position.z));
-        line.SetPosition(2, new Vector3(gameObject.transform.position.x - .4f, gameObject.transform.position.y - .1f, gameObject.transform.position.z));
+        line.SetPosition(0, new Vector3(gameObject.transform.localPosition.x - .5f, gameObject.transform.localPosition.y, 0));
+        line.SetPosition(1, new Vector3(gameObject.transform.localPosition.x - 1f, gameObject.transform.localPosition.y, 0));
 
     }
     private void OnMouseDown()
