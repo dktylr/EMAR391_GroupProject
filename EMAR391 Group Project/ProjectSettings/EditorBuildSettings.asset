@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/StartScreen.unity
+    guid: f5a23a66a730d5742933d47ccd49bf29
+  - enabled: 1
+    path: Assets/Scenes/NanobotBuilder.unity
+    guid: 252e07cfa6c78a449aa3544d415d105c
+  - enabled: 1
+    path: Assets/Scenes/NanobotCharger.unity
+    guid: ac117e16b897ce64db11869547d79436
+  - enabled: 1
+    path: Assets/Scenes/NanobotAttack.unity
+    guid: 648b23c38f894bc4aac90506569dea30
+  - enabled: 1
     path: Assets/Scenes/EndScreen.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
