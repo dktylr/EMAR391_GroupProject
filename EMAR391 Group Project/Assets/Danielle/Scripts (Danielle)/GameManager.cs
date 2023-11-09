@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public Player player;
     public ParticleSystem explosion;
-    public int lives = 3;
+    public int lives = 1;
     public float respawnTime = 2.0f;
     public float respawnInvulnerabilityTime = 5.0f;
     public int score = 0;
@@ -17,11 +18,16 @@ public class GameManager : MonoBehaviour
         this.explosion.transform.position = virus.transform.position;
         this.explosion.Play();
 
-        if(virus.size < 0.75f) {
+        if (virus.size < 0.75f)
+        {
             this.score += 100;
-        } else if (virus.size < 1.2f) {
+        }
+        else if (virus.size < 1.2f)
+        {
             this.score += 50;
-        } else {
+        }
+        else
+        {
             this.score += 25;
         }
     }
@@ -35,7 +41,9 @@ public class GameManager : MonoBehaviour
         if (this.lives <= 0)
         {
             GameOver();
-        } else {
+        }
+        else
+        {
             Invoke(nameof(Respawn), this.respawnTime);
         }
 
@@ -55,6 +63,6 @@ public class GameManager : MonoBehaviour
     }
     private void GameOver()
     {
-
+        SceneManager.LoadScene("NanobotBuilder");
     }
 }
