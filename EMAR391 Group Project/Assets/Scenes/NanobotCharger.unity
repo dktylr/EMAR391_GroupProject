@@ -630,13 +630,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c94c306c854e04f8cb23b1153a17677e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 37
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -1098,7 +1098,6 @@ MonoBehaviour:
   yellowConnected: 0
   greenConnected: 0
   blueConnected: 0
-  spark: {fileID: 1905951735}
 --- !u!114 &650918970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1993,7 +1992,6 @@ MonoBehaviour:
   yellowConnected: 0
   greenConnected: 0
   blueConnected: 0
-  spark: {fileID: 1905951735}
 --- !u!114 &965401847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3519,7 +3517,6 @@ MonoBehaviour:
   yellowConnected: 0
   greenConnected: 0
   blueConnected: 0
-  spark: {fileID: 1905951735}
 --- !u!114 &1577377518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3773,7 +3770,6 @@ MonoBehaviour:
   yellowConnected: 0
   greenConnected: 0
   blueConnected: 0
-  spark: {fileID: 1905951735}
 --- !u!114 &1625268309
 MonoBehaviour:
   m_ObjectHideFlags: 0
