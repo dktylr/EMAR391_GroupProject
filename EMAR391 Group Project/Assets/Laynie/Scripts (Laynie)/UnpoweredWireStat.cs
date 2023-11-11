@@ -10,4 +10,5 @@ public class UnpoweredWireStat : MonoBehaviour
     public Color objectColor;
     public GameObject poweredLight;
     public GameObject unpoweredLight;
+
 }

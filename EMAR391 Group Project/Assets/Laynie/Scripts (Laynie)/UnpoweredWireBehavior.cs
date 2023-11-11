@@ -16,7 +16,8 @@ public class UnpoweredWireBehavior : MonoBehaviour
     public bool yellowConnected = false;
     public bool greenConnected = false;
     public bool blueConnected = false;
-    
+
+ 
     // Start is called before the first frame update
     void Start()
     {
