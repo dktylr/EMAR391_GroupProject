@@ -8,7 +8,17 @@ public class MusicClass : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(transform.gameObject);
-        _audioSource = GetComponent<AudioSource>();
+        _audioSource = GetComponent<AudioSource>(); 
+            int MusicPlayingCount = FindObjectsOfType<AudioSource>().Length;
+            if (MusicPlayingCount > 1)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                DontDestroyOnLoad(gameObject);
+            }
+
     }
 
     public void PlayMusic()
