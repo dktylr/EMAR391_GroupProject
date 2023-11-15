@@ -30,4 +30,9 @@ public class LevelLoad : MonoBehaviour
     {
         SceneManager.LoadScene("NanobotAttack");
     }
+
+    public void Instruction(string scene)
+    {
+        SceneManager.LoadScene("Instructions");
+    }
 }
