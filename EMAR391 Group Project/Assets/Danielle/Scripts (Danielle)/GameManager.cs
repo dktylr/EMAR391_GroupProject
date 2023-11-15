@@ -13,23 +13,16 @@ public class GameManager : MonoBehaviour
     public float respawnInvulnerabilityTime = 5.0f;
     public int score = 0;
 
+    private void Start()
+    {
+        DontDestroyOnLoad(this);
+    }
+
     public void VirusDestroyed(Virus virus)
     {
         this.explosion.transform.position = virus.transform.position;
         this.explosion.Play();
-
-        if (virus.size < 0.75f)
-        {
-            this.score += 100;
-        }
-        else if (virus.size < 1.2f)
-        {
-            this.score += 50;
-        }
-        else
-        {
-            this.score += 25;
-        }
+            this.score += 1;
     }
     public void PlayerDied()
     {
@@ -52,7 +45,7 @@ public class GameManager : MonoBehaviour
     private void Respawn()
     {
         this.player.transform.position = Vector3.zero;
-        this.player.gameObject.layer = LayerMask.NameToLayer("Ignore Collisions");
+        this.player.gameObject.layer = LayerMask.NameToLayer("IgnoreCollisions");
         this.player.gameObject.SetActive(true);
         Invoke(nameof(TurnOnCollisions), this.respawnInvulnerabilityTime);
     }
@@ -63,6 +56,6 @@ public class GameManager : MonoBehaviour
     }
     private void GameOver()
     {
-        SceneManager.LoadScene("NanobotBuilder");
+        SceneManager.LoadScene("EndScreen");
     }
 }

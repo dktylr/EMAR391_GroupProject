@@ -13,12 +13,16 @@ public class Player : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private bool _thrusting;
     private bool _reversing;
+    private bool _isDamaged = false;
     private float _turnDirection;
-
+    public Animator animator;
+    public RuntimeAnimatorController nanobotController;
+    public RuntimeAnimatorController nanobotDamagedController;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        animator = gameObject.GetComponent<Animator>();
     }
 
     private void Update()
@@ -74,6 +78,14 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void LateUpdate()
+    {
+        if(_isDamaged)
+        {
+            animator.runtimeAnimatorController = nanobotDamagedController;
+        }
+    }
+
     private void Shoot()
     {
         Bullet bullet = Instantiate(this.bulletPrefab, this.transform.position, this.transform.rotation);
@@ -86,6 +98,7 @@ public class Player : MonoBehaviour
         {
             _rigidbody.velocity = Vector3.zero;
             _rigidbody.angularVelocity = 0.0f;
+            _isDamaged = true;
 
             AudioSource.PlayClipAtPoint(hitSound, new Vector2(0, 0));
             this.gameObject.SetActive(false);
